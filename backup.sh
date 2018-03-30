@@ -9,7 +9,7 @@ exit 1
 else
 
 #Let users know of the backup and turn off world saving temporarily
-/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Server Backup Beginning Now..."\\015save-off\\015save-all\\0$
+/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Server Backup Beginning Now..."\\015save-off\\015save-all\\015
 sleep 3
 
 #change working directory to my hourly backup folder
@@ -23,7 +23,7 @@ mv -f backup/Minecraft-Server.zip backup/Minecraft-Server-$(date -d "today" +"%Y
 /usr/bin/screen -p 0 -S minecraft -X eval 'stuff save-on\\015"say Backup complete. World now saving to disk."\\015'
 
 /usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Beginning Cloud upload of backup"\\015'
-/home/matthilt/gdrive upload -p 1YoH2OH8sTkHNIO6s4XjG7x6zp1KxGJbt backup/Minecraft-Server-$(date -d "today" +"%Y%m$
+/home/minecraft/gdrive upload -p 1YoH2OH8sTkHNIO6s4XjG7x6zp1KxGJbt backup/Minecraft-Server-$(date -d "today" +"%Y%m%d").zip
 /usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Cloud upload of backup complete"\\015'
 
 fi
