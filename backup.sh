@@ -13,14 +13,14 @@ else
 sleep 3
 
 #do level backup
-zip -9 -r /home/minecraft/backup/Minecraft-Server.zip /home/minecraft/server
-mv -f /home/minecraft/backup/Minecraft-Server.zip /home/minecraft/backup/Minecraft-Server-$(date -d "today" +"%Y%m%d").zip
+zip -9 -r /home/##USER##/backup/Minecraft-Server.zip /home/minecraft/server
+mv -f /home/##USER##/backup/Minecraft-Server.zip /home/minecraft/backup/Minecraft-Server-$(date -d "today" +"%Y%m%d").zip
 
 #Let users know the backup is done and re-enable world saving. Also relay the time, because why not.
 /usr/bin/screen -p 0 -S minecraft -X eval 'stuff save-on\\015"say Backup complete. World now saving to disk."\\015'
 
 /usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Beginning Cloud upload of backup"\\015'
-/home/minecraft/gdrive upload -p 1YoH2OH8sTkHNIO6s4XjG7x6zp1KxGJbt backup/Minecraft-Server-$(date -d "today" +"%Y%m%d").zip
+/home/###USER###/gdrive upload -p 1YoH2OH8sTkHNIO6s4XjG7x6zp1KxGJbt backup/Minecraft-Server-$(date -d "today" +"%Y%m%d").zip
 /usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Cloud upload of backup complete"\\015'
 
 fi
