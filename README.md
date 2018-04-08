@@ -5,11 +5,11 @@ If Google Compute:  https://cloud.google.com/solutions/gaming/minecraft-server
 ## Create Ubuntu VM with user minecraft
 
 #Run Updates and Install Required Hardware
-sudo dpkg-reconfigure tzdata
-sudo apt-get update && sudo apt-get -y upgrade
-sudo apt-get -y install default-jdk screen zip unzip
-sudo apt-get install golang-go
 
+sudo timedatectl set-timezone America/New_York
+
+sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get -y install default-jdk screen zip unzip golang-go
 
 #Download and setup gdrive
 wget -O gdrive https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA
