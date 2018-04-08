@@ -21,4 +21,4 @@
 # 
 # m h  dom mon dow   command
 0 1 * * * /bin/sh /home/###USER###/backup.sh 1> /home/###USER###/backup/backup.log.txt 2> /home/###USER###/backup/backup.error.txt
-50 1 * * * /usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Shutting down server in 10 minutes"\\015'
+#50 1 * * * /usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say Shutting down server in 10 minutes"\\015'
