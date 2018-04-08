@@ -13,7 +13,7 @@ else
 sleep 3
 
 #do level backup
-zip -9 -r /home/###USER###/backup/Minecraft-Server.zip /home/minecraft/server
+zip -9 -r /home/###USER###/backup/Minecraft-Server.zip /home/###USER###/server
 mv -f /home/###USER###/backup/Minecraft-Server.zip /home/###USER###/backup/Minecraft-Server-$(date -d "today" +"%Y%m%d").zip
 
 #Let users know the backup is done and re-enable world saving. Also relay the time, because why not.
