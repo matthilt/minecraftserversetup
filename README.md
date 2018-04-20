@@ -26,6 +26,11 @@ unzip Minecraft-Server-#####.zip
 sudo wget -O /etc/systemd/system/minecraft.service https://github.com/matthilt/minecraftserversetup/raw/master/minecraft.service
 sudo systemctl enable minecraft
 
+#Install .NET for Azure Copy
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+
 mkdir backup
 lwget -O backup.sh https://github.com/matthilt/minecraftserversetup/raw/master/backup.sh
 chmod u+x backup.sh
