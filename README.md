@@ -9,6 +9,7 @@ If Google Compute:  https://cloud.google.com/solutions/gaming/minecraft-server
 sudo timedatectl set-timezone America/New_York
 
 sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
 sudo apt-get -y install default-jdk screen zip unzip golang-go
 
 #Download backed up server
